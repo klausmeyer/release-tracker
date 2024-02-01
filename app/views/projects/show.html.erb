@@ -1,0 +1,21 @@
+<div class="list-group">
+  <%= render @project %>
+</div>
+
+<h3 class="my-4">Versions</h3>
+
+<% @project.versions.semantic.reverse.group_by { |v| [v.major, v.minor] }.each do |(major, minor), versions| %>
+  <h4 class="my-4"><%= major %>.<%= minor %></h4>
+  <table class="table table-striped">
+    <colgroup>
+      <col width="20%">
+      <col>
+    </colgroup>
+    <% versions.each do |version| %>
+      <tr>
+        <td><%= version %></td>
+        <td><%= version.released_at || "<em>unknown release date</em>".html_safe %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end%>
