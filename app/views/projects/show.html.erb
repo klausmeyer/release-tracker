@@ -13,8 +13,14 @@
     </colgroup>
     <% versions.each do |version| %>
       <tr>
-        <td><%= version %></td>
-        <td><%= version.released_at || "<em>unknown release date</em>".html_safe %></td>
+        <td><code><%= version %></code></td>
+        <td>
+          <% if version.released_at %>
+            <code><%= version.released_at %></code>
+          <% else %>
+            <em>unknown release date</em>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>

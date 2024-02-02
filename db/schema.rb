@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_01_180450) do
     t.integer "major", null: false
     t.integer "minor", null: false
     t.integer "patch"
+    t.string "git_tag", null: false
+    t.string "git_sha", null: false
     t.datetime "released_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

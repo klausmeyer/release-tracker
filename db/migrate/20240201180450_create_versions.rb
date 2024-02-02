@@ -5,6 +5,8 @@ class CreateVersions < ActiveRecord::Migration[7.1]
       t.integer    :major,       null: false
       t.integer    :minor,       null: false
       t.integer    :patch,       null: true
+      t.string     :git_tag,     null: false
+      t.string     :git_sha,     null: false
       t.timestamp  :released_at, null: true
 
       t.timestamps
