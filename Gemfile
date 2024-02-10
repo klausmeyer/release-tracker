@@ -41,9 +41,15 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "octokit"
-gem "faraday-retry"
-gem "sidekiq"
+# Ruby toolkit for the GitHub API [https://github.com/octokit/octokit.rb]
+gem "octokit", "~> 8.0.0"
+
+# Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
+# Octokit optional dependency
+gem "faraday-retry", "~> 2.2.0"
+
+# Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
+gem "sidekiq", "~> 7.0.0"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -52,9 +58,11 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
 
+  # A Ruby gem to load environment variables from `.env`. [https://github.com/bkeepers/dotenv]
   gem "dotenv-rails", "~> 2.8"
 
-  gem "rspec-rails"
+  # Behaviour Driven Development for Ruby [https://github.com/rspec/rspec-rails]
+  gem "rspec-rails", "~> 6.1.0"
 end
 
 group :development do
