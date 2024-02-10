@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
   has_many :versions, dependent: :destroy
+  belongs_to :version_pattern
 
   scope :active, -> { all }
   scope :alphabetical, -> { order(name: :asc) }
@@ -12,7 +13,7 @@ class Project < ApplicationRecord
     "https://github.com/#{slug}"
   end
 
-  def version_pattern_regex
-    Regexp.new(version_pattern || '^(?:v|release-)?(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)$')
+  def version_pattern_regexp
+    Regexp.new(version_pattern.regexp)
   end
 end

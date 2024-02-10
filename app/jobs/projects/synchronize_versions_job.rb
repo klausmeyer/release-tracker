@@ -4,7 +4,7 @@ module Projects
       self.full_sync = full_sync
 
       client.tags(project.slug).each do |tag|
-        match = tag[:name].match(project.version_pattern_regex)
+        match = tag[:name].match(project.version_pattern_regexp)
 
         Rails.logger.debug "[#{self.class.name}] #{project.slug} :: #{tag[:name]} :: #{match}"
 

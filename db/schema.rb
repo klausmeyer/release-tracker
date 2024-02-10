@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_01_180450) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_10_205025) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,10 +18,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_01_180450) do
     t.string "source", null: false
     t.string "slug", null: false
     t.string "name", null: false
-    t.string "version_pattern"
+    t.bigint "version_pattern_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["source", "slug"], name: "index_projects_on_source_and_slug", unique: true
+    t.index ["version_pattern_id"], name: "index_projects_on_version_pattern_id"
+  end
+
+  create_table "version_patterns", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "examples", null: false
+    t.string "regexp", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_version_patterns_on_name", unique: true
   end
 
   create_table "versions", force: :cascade do |t|
@@ -38,5 +48,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_01_180450) do
     t.index ["project_id"], name: "index_versions_on_project_id"
   end
 
+  add_foreign_key "projects", "version_patterns"
   add_foreign_key "versions", "projects"
 end
