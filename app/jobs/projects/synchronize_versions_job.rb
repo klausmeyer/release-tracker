@@ -14,7 +14,12 @@ module Projects
         version.git_tag = tag[:name]
         version.git_sha = tag[:commit][:sha]
 
-        version.save! && Versions::UpdateReleaseDateJob.perform_later(version) if version.changed?
+        version.save!
+
+        if version.changed?
+          Versions::UpdateReleaseDateJob.perform_later(version)
+          Versions::NotifyJob.perform_later(version)
+        end
       end
     end
 
