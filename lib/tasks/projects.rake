@@ -8,8 +8,6 @@ namespace :projects do
   task update: :_setup do
     full_sync = ActiveModel::Type::Boolean.new.cast(ENV.fetch('FULL_SYNC', 'false'))
 
-    Rails.logger.info "full_sync: #{full_sync}"
-
-    Project.active.each { |p| Projects::SynchronizeVersions.new(p, full_sync: full_sync).call }
+    Project.active.each { |p| Projects::SynchronizeVersionsJob.perform_later(p, full_sync) }
   end
 end

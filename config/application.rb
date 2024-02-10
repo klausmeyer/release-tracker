@@ -38,5 +38,9 @@ module ReleaseTracker
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # custom config below
+
+    config.active_job.queue_adapter = :sidekiq
   end
 end

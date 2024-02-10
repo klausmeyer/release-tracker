@@ -1,11 +1,8 @@
 module Projects
-  class SynchronizeVersions
-    def initialize(project, full_sync: false)
-      self.project   = project
+  class SynchronizeVersionsJob < ApplicationJob
+    def perform(project, full_sync)
       self.full_sync = full_sync
-    end
 
-    def call
       client.tags(project.slug).each do |tag|
         match = tag[:name].match(project.version_pattern_regex)
 
@@ -17,13 +14,13 @@ module Projects
         version.git_tag = tag[:name]
         version.git_sha = tag[:commit][:sha]
 
-        version.save! && Versions::UpdateReleaseDate.new(version, full_sync: full_sync).call if version.changed?
+        version.save! && Versions::UpdateReleaseDateJob.perform_later(version) if version.changed?
       end
     end
 
     private
 
-    attr_accessor :project, :full_sync
+    attr_accessor :full_sync
 
     def client
       @client ||= Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'], auto_paginate: full_sync)
