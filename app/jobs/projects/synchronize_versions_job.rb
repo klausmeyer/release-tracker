@@ -14,12 +14,12 @@ module Projects
         version.git_tag = tag[:name]
         version.git_sha = tag[:commit][:sha]
 
+        next unless version.changed?
+
         version.save!
 
-        if version.changed?
-          Versions::UpdateReleaseDateJob.perform_later(version)
-          Versions::NotifyJob.perform_later(version)
-        end
+        Versions::UpdateReleaseDateJob.perform_later(version)
+        Versions::NotifyJob.perform_later(version) unless full_sync
       end
 
       SynchronizeVersionsJob.set(wait: 60.minutes).perform_later(project, false)
