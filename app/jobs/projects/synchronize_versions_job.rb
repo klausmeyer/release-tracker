@@ -22,7 +22,7 @@ module Projects
         end
       end
 
-      SynchronizeVersionsJob.set(wait: 5.minutes).perform_later(project, false)
+      SynchronizeVersionsJob.set(wait: 60.minutes).perform_later(project, false)
     end
 
     private
