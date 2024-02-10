@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_205025) do
     t.string "git_tag", null: false
     t.string "git_sha", null: false
     t.datetime "released_at", precision: nil
+    t.boolean "latest", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["project_id", "major", "minor", "patch"], name: "index_versions_on_project_id_and_major_and_minor_and_patch", unique: true

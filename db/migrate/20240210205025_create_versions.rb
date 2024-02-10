@@ -8,6 +8,7 @@ class CreateVersions < ActiveRecord::Migration[7.1]
       t.string     :git_tag,     null: false
       t.string     :git_sha,     null: false
       t.timestamp  :released_at, null: true
+      t.boolean    :latest,      null: false, default: false
 
       t.timestamps
     end

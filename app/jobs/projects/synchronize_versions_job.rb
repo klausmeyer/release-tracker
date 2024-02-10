@@ -22,6 +22,11 @@ module Projects
         Versions::NotifyJob.perform_later(version) unless full_sync
       end
 
+      Version.transaction do
+        project.versions.update_all(latest: false)
+        project.versions.semantic.last.update!(latest: true)
+      end
+
       SynchronizeVersionsJob.set(wait: 60.minutes).perform_later(project, false)
     end
 

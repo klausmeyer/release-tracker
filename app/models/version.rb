@@ -3,7 +3,7 @@ class Version < ApplicationRecord
 
   scope :semantic, -> { order(major: :asc, minor: :asc, patch: :asc) }
   scope :stable, -> { all }
-  scope :latest, -> { order(Arel.sql('created_at::timestamp(0) desc, major desc, minor desc, patch desc')) }
+  scope :latest, -> { where(latest: true).where.not(released_at: nil).order(released_at: :desc) }
 
   def to_s
     [major, minor, patch].compact.join(".")
