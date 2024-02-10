@@ -28,6 +28,7 @@ end
   {source: 'github', slug: 'keycloak/keycloak',     name: 'Keycloak'},
   {source: 'github', slug: 'kubernetes/kubernetes', name: 'Kubernetes'},
   {source: 'github', slug: 'longhorn/longhorn',     name: 'Longhorn'},
+  {source: 'github', slug: 'microsoft/vscode',      name: 'Visual Studio Code'},
   {source: 'github', slug: 'moby/moby',             name: 'Docker'},
   {source: 'github', slug: 'nginx/nginx',           name: 'Nginx'},
   {source: 'github', slug: 'postgres/postgres',     name: 'PostgreSQL'},

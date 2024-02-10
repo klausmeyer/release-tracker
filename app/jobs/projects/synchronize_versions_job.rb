@@ -1,6 +1,6 @@
 module Projects
   class SynchronizeVersionsJob < ApplicationJob
-    def perform(project, full_sync)
+    def perform(project, full_sync = false)
       self.full_sync = full_sync
 
       client.tags(project.slug).each do |tag|
