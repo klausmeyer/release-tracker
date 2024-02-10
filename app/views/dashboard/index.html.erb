@@ -1,0 +1,29 @@
+<h2 class="my-4">Dashboard</h2>
+
+<h3 class="my-4">Latest releases</h3>
+
+<table class="table">
+  <colgroup>
+    <col width="30%">
+    <col width="30%">
+    <col width="30%">
+  </colgroup>
+  <tr>
+    <th>Timestamp</th>
+    <th>Project</th>
+    <th>Version</th>
+  </tr>
+  <% @versions.each do |version| %>
+  <tr>
+    <td><%= version.created_at %></td>
+    <td><%= version.project.name %></td>
+    <td><%= version.to_s %></td>
+  </tr>
+  <% end %>
+</table>
+
+<h3 class="my-4">Popular projects</h3>
+
+<%= render "projects/projects", projects: @projects %>
+
+<p class="my-4"><%= link_to "All projects", projects_path %></p>

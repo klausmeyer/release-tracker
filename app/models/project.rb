@@ -4,6 +4,7 @@ class Project < ApplicationRecord
 
   scope :active, -> { all }
   scope :alphabetical, -> { order(name: :asc) }
+  scope :popular, -> { alphabetical }
 
   def latest_version
     versions.stable.semantic.last
