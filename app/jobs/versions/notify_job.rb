@@ -20,14 +20,14 @@ module Versions
     end
 
     def url
-      ENV.fetch('WEBHOOK_DISCORD_URL')
+      ENV.fetch("WEBHOOK_DISCORD_URL")
     end
 
     def body
       {
         embeds: [{
-          title: "#{version.project.name} - #{version.to_s}",
-          url:   version.project.link,
+          title: "#{version.project.name} - #{version}",
+          url:   version.project.link
         }]
       }
     end

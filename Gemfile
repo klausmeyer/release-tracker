@@ -77,4 +77,7 @@ group :development do
 
   # Manage Procfile-based applications
   gem "foreman", "~> 0.87.2"
+
+  # Ruby Style Guide, with linter & automatic code fixer [https://github.com/testdouble/standard]
+  gem "standard", "~> 1.33.0"
 end

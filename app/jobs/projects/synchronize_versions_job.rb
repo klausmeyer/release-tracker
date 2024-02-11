@@ -35,7 +35,7 @@ module Projects
     attr_accessor :full_sync
 
     def client
-      @client ||= Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'], auto_paginate: full_sync)
+      @client ||= Octokit::Client.new(access_token: ENV["GITHUB_TOKEN"], auto_paginate: full_sync)
     end
   end
 end
