@@ -71,6 +71,12 @@ group :development, :test do
 
   # Behaviour Driven Development for Ruby [https://github.com/rspec/rspec-rails]
   gem "rspec-rails", "~> 6.1.0"
+
+  # Fixtures replacement: https://github.com/thoughtbot/factory_bot_rails
+  gem "factory_bot_rails", "~> 6.2"
+
+  # Code coverage: https://github.com/simplecov-ruby/simplecov
+  gem "simplecov", "~> 0.22.0", require: false
 end
 
 group :development do
@@ -88,4 +94,13 @@ group :development do
 
   # Ruby Style Guide, with linter & automatic code fixer [https://github.com/testdouble/standard]
   gem "standard", "~> 1.33.0"
+end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+
+  # Library for stubbing and setting expectations on HTTP requests in Ruby: https://github.com/bblimke/webmock
+  gem "webmock", "~> 3.19"
 end
