@@ -27,7 +27,7 @@ module Projects
         project.versions.semantic.last.update!(latest: true)
       end
 
-      SynchronizeVersionsJob.set(wait: 60.minutes).perform_later(project, false)
+      SynchronizeVersionsJob.set(wait_until: 1.hour.from_now).perform_later(project, false)
     end
 
     private
