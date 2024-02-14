@@ -41,6 +41,9 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
+
 # Ruby toolkit for the GitHub API [https://github.com/octokit/octokit.rb]
 gem "octokit", "~> 8.0.0"
 
@@ -59,8 +62,8 @@ gem "sidekiq", "~> 7.2.0"
 # The official Airbrake library for Ruby applications [https://github.com/airbrake/airbrake]
 gem "airbrake", "~> 13.0.0"
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+# RSS reading and writing [https://github.com/ruby/rss]
+gem "rss", "~> 0.3.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

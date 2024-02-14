@@ -1,0 +1,16 @@
+<%=
+  RSS::Maker.make("atom") do |maker|
+    maker.channel.author = "Release Tracker"
+    maker.channel.updated = Time.now.to_s
+    maker.channel.about = request.original_url
+    maker.channel.title = "Latest Versions"
+
+    @versions.each do |version|
+      maker.items.new_item do |item|
+        item.link = "#{request.base_url}#{project_path(version.project)}#version-#{version.to_s}"
+        item.title = "#{version.project.name} #{version.to_s} was released"
+        item.updated = (version.released_at || version.created_at).to_time
+      end
+    end
+  end.to_s.html_safe
+%>
