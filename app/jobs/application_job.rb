@@ -5,6 +5,9 @@ class ApplicationJob < ActiveJob::Base
   # Most jobs are safe to ignore if the underlying records are no longer available
   # discard_on ActiveJob::DeserializationError
 
+  retry_on SocketError
+  retry_on Faraday::ConnectionFailed
+
   rescue_from Faraday::TooManyRequestsError do |e|
     seconds = [e.response.dig(:headers, :retry_after).to_i, 5.minutes].min
 
