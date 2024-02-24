@@ -39,12 +39,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_14_201704) do
     t.integer "major", null: false
     t.integer "minor", null: false
     t.integer "patch"
+    t.integer "pre"
     t.string "git_tag", null: false
     t.string "git_sha", null: false
     t.datetime "released_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["project_id", "major", "minor", "patch"], name: "index_versions_on_project_id_and_major_and_minor_and_patch", unique: true
+    t.index ["project_id", "major", "minor", "patch", "pre"], name: "idx_on_project_id_major_minor_patch_pre_94543b0152", unique: true
     t.index ["project_id"], name: "index_versions_on_project_id"
   end
 

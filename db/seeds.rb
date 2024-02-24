@@ -18,6 +18,11 @@ VersionPattern.find_or_create_by!(name: "PostgreSQL") do |vp|
   vp.regexp   = '^REL_(?<major>\d+)_(?<minor>\d+)$'
 end
 
+VersionPattern.find_or_create_by!(name: "Ruby on Rails") do |vp|
+  vp.examples = "v1.2.3 / v1.2.3.4"
+  vp.regexp   = '^v(?<major>\d+)\.(?<minor>\d+)\.(?<patch>\d+)(?:\.(?<pre>\d+))?$'
+end
+
 VersionPattern.find_or_create_by!(name: "Ruby") do |vp|
   vp.examples = "v1_2_3"
   vp.regexp   = '^v(?<major>\d+)_(?<minor>\d+)_(?<patch>\d+)$'
