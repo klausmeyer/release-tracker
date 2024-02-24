@@ -45,7 +45,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Ruby toolkit for the GitHub API [https://github.com/octokit/octokit.rb]
-gem "octokit", "~> 8.0.0"
+gem "octokit", "~> 8.1.0"
 
 # Simple, but flexible HTTP client library, with support for multiple backends: https://github.com/lostisland/faraday
 gem "faraday", "~> 2.7"
