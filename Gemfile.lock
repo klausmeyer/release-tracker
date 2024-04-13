@@ -126,7 +126,7 @@ GEM
       net-http
     faraday-retry (2.2.0)
       faraday (~> 2.0)
-    foreman (0.87.2)
+    foreman (0.88.1)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashdiff (1.1.0)
@@ -374,7 +374,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2)
   faraday (~> 2.7)
   faraday-retry (~> 2.2.0)
-  foreman (~> 0.87.2)
+  foreman (~> 0.88.1)
   health_check (~> 3.1)
   importmap-rails
   jbuilder

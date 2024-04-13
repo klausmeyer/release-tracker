@@ -93,7 +93,7 @@ group :development do
   # gem "spring"
 
   # Manage Procfile-based applications
-  gem "foreman", "~> 0.87.2"
+  gem "foreman", "~> 0.88.1"
 
   # Ruby Style Guide, with linter & automatic code fixer [https://github.com/testdouble/standard]
   gem "standard", "~> 1.35.1"
