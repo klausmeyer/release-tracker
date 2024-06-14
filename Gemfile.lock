@@ -122,6 +122,8 @@ GEM
       railties (>= 5.0.0)
     faraday (2.9.1)
       faraday-net_http (>= 2.0, < 3.2)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (3.1.0)
       net-http
     faraday-retry (2.2.1)
@@ -159,6 +161,7 @@ GEM
     mini_portile2 (2.8.7)
     minitest (5.23.1)
     msgpack (1.7.2)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -358,6 +361,7 @@ DEPENDENCIES
   dotenv-rails (~> 3.0)
   factory_bot_rails (~> 6.2)
   faraday (~> 2.7)
+  faraday-multipart (~> 1.0.4)
   faraday-retry (~> 2.2.0)
   foreman (~> 0.88.1)
   health_check (~> 3.1)
