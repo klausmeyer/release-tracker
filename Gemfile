@@ -60,7 +60,7 @@ gem "faraday-retry", "~> 2.2.0"
 gem "health_check", "~> 3.1"
 
 # Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
-gem "sidekiq", "~> 7.2.0"
+gem "sidekiq", "~> 7.3.0"
 
 # The official Airbrake library for Ruby applications [https://github.com/airbrake/airbrake]
 gem "airbrake", "~> 13.0.0"
