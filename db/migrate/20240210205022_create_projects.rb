@@ -9,6 +9,6 @@ class CreateProjects < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :projects, [:source, :slug], unique: true
+    add_index :projects, [ :source, :slug ], unique: true
   end
 end

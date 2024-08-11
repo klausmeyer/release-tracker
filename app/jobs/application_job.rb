@@ -9,7 +9,7 @@ class ApplicationJob < ActiveJob::Base
   retry_on Faraday::ConnectionFailed
 
   rescue_from Faraday::TooManyRequestsError do |e|
-    seconds = [e.response.dig(:headers, :retry_after).to_i, 5.minutes].min
+    seconds = [ e.response.dig(:headers, :retry_after).to_i, 5.minutes ].min
 
     Rails.logger.info "Received TooManyRequestsError - Retry in #{seconds} seconds"
 

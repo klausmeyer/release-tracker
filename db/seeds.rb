@@ -29,16 +29,16 @@ VersionPattern.find_or_create_by!(name: "Ruby") do |vp|
 end
 
 [
-  {source: "github", slug: "derailed/k9s",          name: "k9s"},
-  {source: "github", slug: "keycloak/keycloak",     name: "Keycloak"},
-  {source: "github", slug: "kubernetes/kubernetes", name: "Kubernetes"},
-  {source: "github", slug: "longhorn/longhorn",     name: "Longhorn"},
-  {source: "github", slug: "microsoft/vscode",      name: "Visual Studio Code"},
-  {source: "github", slug: "moby/moby",             name: "Docker"},
-  {source: "github", slug: "nginx/nginx",           name: "Nginx"},
-  {source: "github", slug: "postgres/postgres",     name: "PostgreSQL"},
-  {source: "github", slug: "rails/rails",           name: "Ruby on Rails"},
-  {source: "github", slug: "ruby/ruby",             name: "Ruby"}
+  { source: "github", slug: "derailed/k9s",          name: "k9s" },
+  { source: "github", slug: "keycloak/keycloak",     name: "Keycloak" },
+  { source: "github", slug: "kubernetes/kubernetes", name: "Kubernetes" },
+  { source: "github", slug: "longhorn/longhorn",     name: "Longhorn" },
+  { source: "github", slug: "microsoft/vscode",      name: "Visual Studio Code" },
+  { source: "github", slug: "moby/moby",             name: "Docker" },
+  { source: "github", slug: "nginx/nginx",           name: "Nginx" },
+  { source: "github", slug: "postgres/postgres",     name: "PostgreSQL" },
+  { source: "github", slug: "rails/rails",           name: "Ruby on Rails" },
+  { source: "github", slug: "ruby/ruby",             name: "Ruby" }
 ].each do |project|
   Project.find_or_create_by!(source: project[:source], slug: project[:slug]) do |p|
     p.assign_attributes(project)

@@ -14,6 +14,6 @@ class CreateVersions < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :versions, [:project_id, :major, :minor, :patch, :pre], unique: true
+    add_index :versions, [ :project_id, :major, :minor, :patch, :pre ], unique: true
   end
 end

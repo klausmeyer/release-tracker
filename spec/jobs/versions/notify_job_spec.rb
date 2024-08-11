@@ -16,10 +16,10 @@ RSpec.describe Versions::NotifyJob do
       expect(discord_request.with do |req|
         expect(req.headers["Content-Type"]).to eq "application/json"
         expect(req.body).to eq({
-          embeds: [{
+          embeds: [ {
             title: "#{version.project.name} - #{version}",
             url:   version.project.link
-          }]
+          } ]
         }.to_json)
       end).to have_been_made
     end
