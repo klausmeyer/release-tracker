@@ -99,7 +99,7 @@ group :development do
   gem "foreman", "~> 0.88.1"
 
   # Ruby Style Guide, with linter & automatic code fixer [https://github.com/testdouble/standard]
-  gem "standard", "~> 1.39.0"
+  gem "standard", "~> 1.40.0"
 end
 
 group :test do
