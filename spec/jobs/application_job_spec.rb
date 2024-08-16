@@ -2,12 +2,16 @@ require "rails_helper"
 
 class DummyJob < ApplicationJob
   def perform
-    raise Faraday::TooManyRequestsError, headers: {retry_after: "600"}
+    raise Faraday::TooManyRequestsError, headers: { retry_after: "600" }
   end
 end
 
 RSpec.describe ApplicationJob do
   include ActiveJob::TestHelper
+
+  before do
+    ActiveJob::Base.queue_adapter = :test
+  end
 
   describe "#perform" do
     it "re-enqueues the job with a wait time based on the provided header" do

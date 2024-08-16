@@ -25,10 +25,10 @@ module Versions
 
     def body
       {
-        embeds: [{
+        embeds: [ {
           title: "#{version.project.name} - #{version}",
           url:   version.project.link
-        }]
+        } ]
       }
     end
   end

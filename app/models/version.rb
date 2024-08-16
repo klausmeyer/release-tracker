@@ -13,6 +13,6 @@ class Version < ApplicationRecord
   scope :latest, -> { where.not(released_at: nil).order(released_at: :desc) }
 
   def to_s
-    [major, minor, patch, pre].compact.join(".")
+    [ major, minor, patch, pre ].compact.join(".")
   end
 end
