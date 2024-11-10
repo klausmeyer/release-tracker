@@ -15,7 +15,7 @@ EXPOSE $PORT
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 RUN apk update \
- && apk add build-base zlib-dev tzdata git nodejs openssl-dev shared-mime-info postgresql-dev libc6-compat \
+ && apk add build-base zlib-dev tzdata git openssl-dev shared-mime-info postgresql-dev libc6-compat \
  && rm -rf /var/cache/apk/* \
  && mkdir -p /var/www/rails
 
@@ -25,13 +25,10 @@ COPY docker-entrypoint.sh /docker-entrypoint.sh
 WORKDIR /var/www/rails/
 
 RUN gem install bundler -v $(grep -A1 "BUNDLED WITH" Gemfile.lock | tail -n1 | tr -d "[:space:]") \
- && bundle config set build.sassc "--disable-march-tune-native" \
  && bundle config set without "development test" \
  && bundle install
 
 ADD . /var/www/rails/
-
-RUN SECRET_KEY_BASE=dummyvalue bundle exec rails assets:precompile
 
 RUN addgroup -S rails && adduser -S rails -G rails -h /var/www/rails/ \
  && chown -R rails.rails /var/www/rails/ \
