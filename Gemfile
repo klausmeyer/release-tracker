@@ -64,6 +64,9 @@ gem "airbrake", "~> 13.0.0"
 # RSS reading and writing [https://github.com/ruby/rss]
 gem "rss", "~> 0.3.0"
 
+#  A Ruby client library for Redis [https://github.com/redis/redis-rb]
+gem "redis", "~> 5.3.0"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
