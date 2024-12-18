@@ -124,8 +124,8 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-multipart (1.0.4)
-      multipart-post (~> 2)
+    faraday-multipart (1.1.0)
+      multipart-post (~> 2.0)
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
     faraday-retry (2.2.1)
@@ -350,7 +350,7 @@ DEPENDENCIES
   dotenv-rails (~> 3.0)
   factory_bot_rails (~> 6.2)
   faraday (~> 2.7)
-  faraday-multipart (~> 1.0.4)
+  faraday-multipart (~> 1.1.0)
   faraday-retry (~> 2.2.0)
   foreman (~> 0.88.1)
   health_check (~> 3.1)

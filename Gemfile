@@ -47,7 +47,7 @@ gem "octokit", "~> 9.2.0"
 gem "faraday", "~> 2.7"
 
 # Perform multipart-post requests using Faraday. [https://github.com/lostisland/faraday-multipart]
-gem "faraday-multipart", "~> 1.0.4"
+gem "faraday-multipart", "~> 1.1.0"
 
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
 gem "faraday-retry", "~> 2.2.0"
