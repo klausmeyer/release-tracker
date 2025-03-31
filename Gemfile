@@ -50,7 +50,7 @@ gem "faraday", "~> 2.7"
 gem "faraday-multipart", "~> 1.1.0"
 
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
-gem "faraday-retry", "~> 2.2.0"
+gem "faraday-retry", "~> 2.3.0"
 
 # Simple health check of Rails app: https://github.com/Purple-Devs/health_check
 gem "health_check", "~> 3.1"
