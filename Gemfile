@@ -81,7 +81,7 @@ group :development, :test do
   gem "dotenv-rails", "~> 3.0"
 
   # Behaviour Driven Development for Ruby [https://github.com/rspec/rspec-rails]
-  gem "rspec-rails", "~> 7.1.0"
+  gem "rspec-rails", "~> 8.0.0"
 
   # Fixtures replacement: https://github.com/thoughtbot/factory_bot_rails
   gem "factory_bot_rails", "~> 6.2"
