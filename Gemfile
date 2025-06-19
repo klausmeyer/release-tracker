@@ -46,9 +46,6 @@ gem "octokit", "~> 10.0.0"
 # Simple, but flexible HTTP client library, with support for multiple backends: https://github.com/lostisland/faraday
 gem "faraday", "~> 2.7"
 
-# Perform multipart-post requests using Faraday. [https://github.com/lostisland/faraday-multipart]
-gem "faraday-multipart", "~> 1.1.0"
-
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
 gem "faraday-retry", "~> 2.3.0"
 
