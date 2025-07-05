@@ -2,7 +2,7 @@ require "rails_helper"
 
 class DummyJob < ApplicationJob
   def perform
-    raise Faraday::TooManyRequestsError, headers: { retry_after: "600" }
+    raise Faraday::TooManyRequestsError, status: "429", headers: { retry_after: "600" }
   end
 end
 
