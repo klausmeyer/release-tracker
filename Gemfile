@@ -92,7 +92,7 @@ group :development do
   gem "web-console"
 
   # Manage Procfile-based applications
-  gem "foreman", "~> 0.88.1"
+  gem "foreman", "~> 0.90.0"
 end
 
 group :test do
