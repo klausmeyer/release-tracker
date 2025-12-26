@@ -47,7 +47,7 @@ gem "octokit", "~> 10.0.0"
 gem "faraday", "~> 2.7"
 
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
-gem "faraday-retry", "~> 2.3.0"
+gem "faraday-retry", "~> 2.4.0"
 
 # Simple health check of Rails app: https://github.com/Purple-Devs/health_check
 gem "health_check", "~> 3.1"
