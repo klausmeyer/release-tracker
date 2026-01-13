@@ -25,7 +25,7 @@ end
 
 VersionPattern.find_or_create_by!(name: "Ruby") do |vp|
   vp.examples = "v1_2_3"
-  vp.regexp   = '^v(?<major>\d+)_(?<minor>\d+)_(?<patch>\d+)$'
+  vp.regexp   = '^v(?<major>\d+)[_\.](?<minor>\d+)[_\.](?<patch>\d+)$'
 end
 
 [
