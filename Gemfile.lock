@@ -323,6 +323,8 @@ GEM
     simplecov_json_formatter (0.1.4)
     stringio (3.2.0)
     thor (1.5.0)
+    thruster (0.1.21)
+    thruster (0.1.21-arm64-darwin)
     timeout (0.6.1)
     tsort (0.2.0)
     turbo-rails (2.0.23)
@@ -353,6 +355,7 @@ GEM
     zeitwerk (2.7.5)
 
 PLATFORMS
+  arm64-darwin-25
   ruby
 
 DEPENDENCIES
@@ -377,6 +380,7 @@ DEPENDENCIES
   selenium-webdriver
   sidekiq (~> 8.1.0)
   simplecov (~> 0.22.0)
+  thruster
   turbo-rails
   web-console
   webmock (~> 3.19)
