@@ -35,7 +35,7 @@ gem "bootsnap", require: false
 # gem "kamal", require: false
 
 # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
-# gem "thruster", require: false
+gem "thruster", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
@@ -48,9 +48,6 @@ gem "faraday", "~> 2.7"
 
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
 gem "faraday-retry", "~> 2.4.0"
-
-# Simple health check of Rails app: https://github.com/Purple-Devs/health_check
-gem "health_check", "~> 3.1"
 
 # Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
 gem "sidekiq", "~> 8.1.0"
