@@ -41,8 +41,6 @@ module ReleaseTracker
 
     # custom config below
 
-    config.active_job.queue_adapter = :sidekiq
-
     config.active_storage.variant_processor = :disabled
   end
 end

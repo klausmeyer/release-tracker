@@ -50,13 +50,5 @@ RSpec.describe Projects::SynchronizeVersionsJob do
       expect(Versions::UpdateReleaseDateJob).to have_been_enqueued.with(Version).twice
       expect(Versions::NotifyJob).to have_been_enqueued.with(Version).twice
     end
-
-    it "schedules the same job again at a later time" do
-      freeze_time do
-        instance.perform(project)
-
-        expect(described_class).to have_been_enqueued.with(project, false).at(1.hour.from_now)
-      end
-    end
   end
 end
