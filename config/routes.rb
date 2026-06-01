@@ -1,5 +1,3 @@
-require "sidekiq/web"
-
 Rails.application.routes.draw do
   root to: "dashboard#index"
 
@@ -12,5 +10,5 @@ Rails.application.routes.draw do
 
   get "/feeds/atom", to: "feeds#atom", defaults: { format: :xml }, as: :atom_feed
 
-  mount Sidekiq::Web, at: "/sidekiq"
+  mount MissionControl::Jobs::Engine, at: "/jobs"
 end

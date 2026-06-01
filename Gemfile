@@ -3,7 +3,7 @@ source "https://rubygems.org"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.1.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
-# gem "propshaft"
+gem "propshaft"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
@@ -25,7 +25,7 @@ gem "turbo-rails"
 
 # Use the database-backed adapters for Rails.cache, Active Job, and Action Cable
 # gem "solid_cache"
-# gem "solid_queue"
+gem "solid_queue"
 # gem "solid_cable"
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -49,17 +49,17 @@ gem "faraday", "~> 2.7"
 # Catches exceptions and retries each request a limited number of times [https://github.com/lostisland/faraday-retry]
 gem "faraday-retry", "~> 2.4.0"
 
-# Simple, efficient background processing for Ruby [https://github.com/sidekiq/sidekiq]
-gem "sidekiq", "~> 8.1.0"
-
 # AppSignal for Ruby gem [https://github.com/appsignal/appsignal-ruby]
 gem "appsignal"
 
 # RSS reading and writing [https://github.com/ruby/rss]
 gem "rss", "~> 0.3.0"
 
+# Dashboard and Active Job extensions to operate and troubleshoot background jobs [https://github.com/rails/mission_control-jobs]
+gem "mission_control-jobs", "~> 1.1"
+
 #  A Ruby client library for Redis [https://github.com/redis/redis-rb]
-gem "redis", "~> 5.4.0"
+# gem "redis", "~> 5.4.0"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

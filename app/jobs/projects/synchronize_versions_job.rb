@@ -21,8 +21,6 @@ module Projects
         Versions::UpdateReleaseDateJob.perform_later(version)
         Versions::NotifyJob.perform_later(version) unless full_sync
       end
-
-      SynchronizeVersionsJob.set(wait_until: 1.hour.from_now).perform_later(project, false)
     end
 
     private
