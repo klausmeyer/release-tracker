@@ -55,8 +55,8 @@ gem "appsignal"
 # RSS reading and writing [https://github.com/ruby/rss]
 gem "rss", "~> 0.3.0"
 
-# Dashboard and Active Job extensions to operate and troubleshoot background jobs [https://github.com/rails/mission_control-jobs]
-gem "mission_control-jobs", "~> 1.1"
+# web interface for monitoring Solid Queue jobs in Rails applications [https://github.com/vishaltps/solid_queue_monitor]
+gem "solid_queue_monitor", "~> 2.0"
 
 #  A Ruby client library for Redis [https://github.com/redis/redis-rb]
 # gem "redis", "~> 5.4.0"

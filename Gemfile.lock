@@ -142,10 +142,6 @@ GEM
     hashdiff (1.2.1)
     i18n (1.14.8)
       concurrent-ruby (~> 1.0)
-    importmap-rails (2.2.3)
-      actionpack (>= 6.0.0)
-      activesupport (>= 6.0.0)
-      railties (>= 6.0.0)
     io-console (0.8.2)
     irb (1.17.0)
       pp (>= 0.6.0)
@@ -172,16 +168,6 @@ GEM
     minitest (6.0.2)
       drb (~> 2.0)
       prism (~> 1.5)
-    mission_control-jobs (1.1.0)
-      actioncable (>= 7.1)
-      actionpack (>= 7.1)
-      activejob (>= 7.1)
-      activerecord (>= 7.1)
-      importmap-rails (>= 1.2.1)
-      irb (~> 1.13)
-      railties (>= 7.1)
-      stimulus-rails
-      turbo-rails
     msgpack (1.8.1)
     net-http (0.9.1)
       uri (>= 0.11.1)
@@ -342,8 +328,9 @@ GEM
       fugit (~> 1.11)
       railties (>= 7.1)
       thor (>= 1.3.1)
-    stimulus-rails (1.3.4)
-      railties (>= 6.0.0)
+    solid_queue_monitor (2.1.0)
+      rails (>= 7.0)
+      solid_queue (>= 0.1.0)
     stringio (3.2.0)
     thor (1.5.0)
     thruster (0.1.21)
@@ -390,7 +377,6 @@ DEPENDENCIES
   faraday (~> 2.7)
   faraday-retry (~> 2.4.0)
   foreman (~> 0.90.0)
-  mission_control-jobs (~> 1.1)
   octokit (~> 10.0.0)
   pg (~> 1.1)
   propshaft
@@ -402,10 +388,11 @@ DEPENDENCIES
   selenium-webdriver
   simplecov (~> 0.22.0)
   solid_queue
+  solid_queue_monitor (~> 2.0)
   thruster
   turbo-rails
   web-console
   webmock (~> 3.19)
 
 BUNDLED WITH
-  4.0.3
+  4.0.14
