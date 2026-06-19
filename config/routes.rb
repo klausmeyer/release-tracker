@@ -1,3 +1,5 @@
+require "solid_queue_monitor"
+
 Rails.application.routes.draw do
   root to: "dashboard#index"
 
@@ -10,5 +12,5 @@ Rails.application.routes.draw do
 
   get "/feeds/atom", to: "feeds#atom", defaults: { format: :xml }, as: :atom_feed
 
-  mount MissionControl::Jobs::Engine, at: "/jobs"
+  mount SolidQueueMonitor::Engine, at: "/jobs"
 end
