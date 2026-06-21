@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/klausmeyer/solid_queue_monitor.git
+  revision: bb9a7c48bb545f5fa5fbbaa16e04f6df52faac60
+  branch: customizations
+  specs:
+    solid_queue_monitor (2.1.0)
+      rails (>= 7.0)
+      solid_queue (>= 0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -328,9 +337,6 @@ GEM
       fugit (~> 1.11)
       railties (>= 7.1)
       thor (>= 1.3.1)
-    solid_queue_monitor (2.1.0)
-      rails (>= 7.0)
-      solid_queue (>= 0.1.0)
     stringio (3.2.0)
     thor (1.5.0)
     thruster (0.1.21)
@@ -388,7 +394,7 @@ DEPENDENCIES
   selenium-webdriver
   simplecov (~> 0.22.0)
   solid_queue
-  solid_queue_monitor (~> 2.0)
+  solid_queue_monitor (~> 2.0)!
   thruster
   turbo-rails
   web-console

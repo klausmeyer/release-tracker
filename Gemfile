@@ -56,7 +56,7 @@ gem "appsignal"
 gem "rss", "~> 0.3.0"
 
 # web interface for monitoring Solid Queue jobs in Rails applications [https://github.com/vishaltps/solid_queue_monitor]
-gem "solid_queue_monitor", "~> 2.0"
+gem "solid_queue_monitor", "~> 2.0", github: "klausmeyer/solid_queue_monitor", branch: "customizations"
 
 #  A Ruby client library for Redis [https://github.com/redis/redis-rb]
 # gem "redis", "~> 5.4.0"
