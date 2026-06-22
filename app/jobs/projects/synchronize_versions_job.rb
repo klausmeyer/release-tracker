@@ -19,7 +19,6 @@ module Projects
         version.save!
 
         Versions::UpdateReleaseDateJob.perform_later(version)
-        Versions::NotifyJob.perform_later(version) unless full_sync
       end
     end
 
