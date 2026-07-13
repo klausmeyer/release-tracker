@@ -81,7 +81,7 @@ group :development, :test do
   gem "factory_bot_rails", "~> 6.2"
 
   # Code coverage: https://github.com/simplecov-ruby/simplecov
-  gem "simplecov", "~> 0.22.0", require: false
+  gem "simplecov", "~> 1.0.0", require: false
 end
 
 group :development do
